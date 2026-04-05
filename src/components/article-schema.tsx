@@ -15,7 +15,7 @@ export default function ArticleSchema({ title, description, slug, date, faqs }: 
     datePublished: date,
     author: { "@type": "Person", name: "Bonnie", jobTitle: "護理師 / 抓龍筋按摩師" },
     publisher: { "@type": "Organization", name: "Bonnie Studio" },
-    url: `https://bonniestudio.com/blog/${slug}`,
+    url: `https://bonniestudio.tw/blog/${slug}`,
   };
 
   const faqSchema = faqs.length > 0 ? {

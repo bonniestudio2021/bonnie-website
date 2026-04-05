@@ -1,4 +1,4 @@
-const BASE_URL = "https://bonniestudio.com";
+const BASE_URL = "https://bonniestudio.tw";
 
 const localBusiness = {
   "@context": "https://schema.org",

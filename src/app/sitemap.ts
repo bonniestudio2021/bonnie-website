@@ -3,7 +3,7 @@ import { getAllSlugs, getAllTags } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
-const BASE_URL = "https://bonniestudio.com";
+const BASE_URL = "https://bonniestudio.tw";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

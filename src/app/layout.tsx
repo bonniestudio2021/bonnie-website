@@ -4,7 +4,7 @@ import "./globals.css";
 import MobileCta from "@/components/mobile-cta";
 import HashScroll from "@/components/hash-scroll";
 
-const BASE_URL = "https://bonniestudio.com";
+const BASE_URL = "https://bonniestudio.tw";
 
 const inter = Inter({
   variable: "--font-inter",
