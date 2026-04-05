@@ -170,19 +170,22 @@ const posts: BlogPost[] = [
   },
 ];
 
+import { newPosts } from "./blog-mens-health";
+const allPosts = [...posts, ...newPosts];
+
 export function getAllPosts(): BlogPost[] {
-  return [...posts].sort(
+  return [...allPosts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return posts.find((p) => p.slug === slug);
+  return allPosts.find((p) => p.slug === slug);
 }
 
 export function getAllTags(): { tag: string; count: number }[] {
   const tagMap = new Map<string, number>();
-  for (const post of posts) {
+  for (const post of allPosts) {
     for (const tag of post.tags) {
       tagMap.set(tag, (tagMap.get(tag) || 0) + 1);
     }
@@ -197,7 +200,7 @@ export function getPostsByTag(tag: string): BlogPost[] {
 }
 
 export function getAllSlugs(): string[] {
-  return posts.map((p) => p.slug);
+  return allPosts.map((p) => p.slug);
 }
 
 export const POSTS_PER_PAGE = 12;
