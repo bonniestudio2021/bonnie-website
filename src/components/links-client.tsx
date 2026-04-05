@@ -64,9 +64,9 @@ export default function LinksClient() {
           className="text-center mb-8"
         >
           <img
-            src="/logo.png"
-            alt="Bonnie Studio"
-            className="h-16 mx-auto mb-4"
+            src="/bonnie-avatar.jpg"
+            alt="Bonnie"
+            className="w-24 h-24 mx-auto rounded-full object-cover border-2 border-border mb-4"
           />
           <h1 className="font-display text-2xl font-bold">Bonnie Studio</h1>
           <p className="text-muted text-sm mt-1">

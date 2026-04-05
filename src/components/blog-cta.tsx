@@ -18,10 +18,11 @@ export default function BlogCtaSection({ cta }: BlogCtaProps) {
       className="bg-[#F5F0EB] rounded-2xl p-8 md:p-12 mt-12"
     >
       <div className="flex flex-col md:flex-row items-center gap-8">
-        {/* Portrait placeholder */}
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-secondary/30 to-primary/20 border-2 border-border flex items-center justify-center flex-shrink-0">
-          <span className="text-xs text-muted">Photo</span>
-        </div>
+        <img
+          src="/bonnie-avatar.jpg"
+          alt="Bonnie"
+          className="w-24 h-24 rounded-full object-cover border-2 border-border flex-shrink-0"
+        />
 
         <div className="text-center md:text-left flex-1">
           <h3 className="font-display text-xl font-bold mb-2">

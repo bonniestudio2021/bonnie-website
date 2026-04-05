@@ -6,7 +6,7 @@ import TableOfContents from "@/components/table-of-contents";
 import RelatedArticles from "@/components/related-articles";
 import BlogCtaSection from "@/components/blog-cta";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
-import { Calendar, Clock, Tag } from "lucide-react";
+import { Clock, Tag } from "lucide-react";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -48,7 +48,15 @@ export default async function BlogPostPage({
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="max-w-3xl mb-10">
-            <div className="flex flex-wrap gap-2 mb-4">
+            <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+              {post.title}
+            </h1>
+            <p className="text-muted mb-4">{post.description}</p>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} />
+                {post.readTime}
+              </span>
               {post.tags.map((tag) => (
                 <a
                   key={tag}
@@ -60,26 +68,12 @@ export default async function BlogPostPage({
                 </a>
               ))}
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
-              {post.title}
-            </h1>
-            <p className="text-muted mb-4">{post.description}</p>
-            <div className="flex items-center gap-4 text-sm text-muted">
-              <span className="flex items-center gap-1.5">
-                <Calendar size={14} />
-                {post.date}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock size={14} />
-                {post.readTime}
-              </span>
-            </div>
           </div>
 
           {/* Content + TOC */}
-          <div className="flex gap-10">
+          <div className="flex gap-24">
             <article
-              className="prose prose-stone max-w-3xl flex-1
+              className="prose prose-stone max-w-2xl flex-1
                 prose-headings:font-display prose-headings:font-bold
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                 prose-img:rounded-xl"

@@ -71,7 +71,7 @@ export default function About() {
               護理師的訓練讓我對身體有更細膩的觀察力——每個人的工作姿勢、運動習慣、生活壓力，都會反映在筋絡的狀態上。我的工作就是用雙手讀懂你的身體，找到那些深層的結節與沾黏，一一為你解開。
             </motion.p>
             <motion.p variants={staggerBlurChild} className="text-muted leading-relaxed mb-8">
-              在 Bonnie Studio，我堅持正規、專業、安全的服務。每一次療程前都會詳細了解你的身體狀況，調整最適合你的手法與力道，讓你在安心的環境中，找回身體的輕盈與舒暢。
+              在 Bonnie Studio，我堅持專業、安全、用心的服務。每一次療程前都會詳細了解你的身體狀況，調整最適合你的手法與力道，讓你在安心的環境中，找回身體的輕盈與舒暢。
             </motion.p>
 
             {/* Credentials */}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import MobileCta from "@/components/mobile-cta";
+import HashScroll from "@/components/hash-scroll";
 
 const BASE_URL = "https://bonniestudio.com";
 
@@ -92,6 +93,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${notoSansTC.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground font-body">
+        <HashScroll />
         {children}
         <MobileCta />
       </body>

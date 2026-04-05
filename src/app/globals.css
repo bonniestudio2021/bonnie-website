@@ -121,6 +121,18 @@ body {
   }
 }
 
+/* Blog article h2 styling */
+.prose h2 {
+  border-left: 4px solid var(--primary);
+  padding-left: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.prose h3 {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.625rem;
+}
+
 /* Marquee animations */
 @keyframes marquee-right {
   0% { transform: translateX(-50%); }

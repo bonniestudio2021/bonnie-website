@@ -1,4 +1,9 @@
 import { newPosts } from "./blog-mens-health";
+import { batchA } from "./blog-batch-a";
+import { batchB } from "./blog-batch-b";
+import { batchC } from "./blog-batch-c";
+import { batchD } from "./blog-batch-d";
+import { batchE } from "./blog-batch-e";
 
 export interface BlogCta {
   headline: string;
@@ -20,7 +25,7 @@ export interface BlogPost {
   cta: BlogCta;
 }
 
-const allPosts: BlogPost[] = [...newPosts];
+const allPosts: BlogPost[] = [...newPosts, ...batchA, ...batchB, ...batchC, ...batchD, ...batchE];
 
 export function getAllPosts(): BlogPost[] {
   return [...allPosts].sort(
