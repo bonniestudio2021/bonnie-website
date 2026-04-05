@@ -205,6 +205,17 @@ export function getPostsByTag(tag: string): BlogPost[] {
   return getAllPosts().filter((p) => p.tags.includes(tag));
 }
 
+export function getPaginatedPostsByTag(tag: string, page: number) {
+  const all = getPostsByTag(tag);
+  const totalPages = Math.ceil(all.length / POSTS_PER_PAGE);
+  const start = (page - 1) * POSTS_PER_PAGE;
+  return {
+    posts: all.slice(start, start + POSTS_PER_PAGE),
+    totalPages,
+    currentPage: page,
+  };
+}
+
 export function getAllSlugs(): string[] {
   return allPosts.map((p) => p.slug);
 }

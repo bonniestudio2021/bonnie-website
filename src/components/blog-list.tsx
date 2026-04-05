@@ -6,6 +6,7 @@ interface BlogListProps {
   currentPage: number;
   totalPages: number;
   currentTag?: string;
+  tagPagination?: boolean;
 }
 
 export default function BlogList({
@@ -13,7 +14,19 @@ export default function BlogList({
   currentPage,
   totalPages,
   currentTag,
+  tagPagination,
 }: BlogListProps) {
+  // Build pagination URLs based on context
+  const getPageUrl = (page: number) => {
+    if (tagPagination && currentTag) {
+      const encodedTag = encodeURIComponent(currentTag);
+      return page === 1
+        ? `/tags/${encodedTag}`
+        : `/tags/${encodedTag}/page/${page}`;
+    }
+    return page === 1 ? "/blog" : `/blog/page/${page}`;
+  };
+
   return (
     <div>
       {/* Posts grid */}
@@ -65,7 +78,7 @@ export default function BlogList({
         <div className="flex justify-center items-center gap-2">
           {currentPage > 1 && (
             <a
-              href={currentPage === 2 ? "/blog" : `/blog/page/${currentPage - 1}`}
+              href={getPageUrl(currentPage - 1)}
               className="px-4 py-2 rounded-lg border border-border text-sm hover:bg-primary/5 transition-colors"
             >
               上一頁
@@ -76,7 +89,7 @@ export default function BlogList({
             return (
               <a
                 key={page}
-                href={page === 1 ? "/blog" : `/blog/page/${page}`}
+                href={getPageUrl(page)}
                 className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm ${
                   page === currentPage
                     ? "bg-primary text-white"
@@ -89,7 +102,7 @@ export default function BlogList({
           })}
           {currentPage < totalPages && (
             <a
-              href={`/blog/page/${currentPage + 1}`}
+              href={getPageUrl(currentPage + 1)}
               className="px-4 py-2 rounded-lg border border-border text-sm hover:bg-primary/5 transition-colors"
             >
               下一頁

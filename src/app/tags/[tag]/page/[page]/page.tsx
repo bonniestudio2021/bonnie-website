@@ -3,33 +3,43 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import BlogList from "@/components/blog-list";
-import { getPaginatedPostsByTag, getAllTags, POSTS_PER_PAGE } from "@/lib/blog";
+import { getPaginatedPostsByTag, getPostsByTag, getAllTags, POSTS_PER_PAGE } from "@/lib/blog";
 
 export function generateStaticParams() {
-  return getAllTags().map(({ tag }) => ({ tag }));
+  const params: { tag: string; page: string }[] = [];
+  for (const { tag } of getAllTags()) {
+    const total = getPostsByTag(tag).length;
+    const totalPages = Math.ceil(total / POSTS_PER_PAGE);
+    for (let i = 1; i <= totalPages; i++) {
+      params.push({ tag, page: String(i) });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ tag: string }>;
+  params: Promise<{ tag: string; page: string }>;
 }): Promise<Metadata> {
-  const { tag: rawTag } = await params;
+  const { tag: rawTag, page } = await params;
   const tag = decodeURIComponent(rawTag);
   return {
-    title: `${tag} | Bonnie Studio`,
-    description: `瀏覽「${tag}」相關的男性保健文章`,
+    title: `${tag} - 第 ${page} 頁 | Bonnie Studio`,
   };
 }
 
-export default async function TagPage({
+export default async function TagPaginatedPage({
   params,
 }: {
-  params: Promise<{ tag: string }>;
+  params: Promise<{ tag: string; page: string }>;
 }) {
-  const { tag: rawTag } = await params;
+  const { tag: rawTag, page: pageStr } = await params;
   const tag = decodeURIComponent(rawTag);
-  const { posts, totalPages, currentPage } = getPaginatedPostsByTag(tag, 1);
+  const page = parseInt(pageStr, 10);
+  if (isNaN(page) || page < 1) notFound();
+
+  const { posts, totalPages, currentPage } = getPaginatedPostsByTag(tag, page);
   if (posts.length === 0) notFound();
 
   return (
@@ -40,9 +50,7 @@ export default async function TagPage({
           <div className="text-center mb-12">
             <p className="text-primary font-medium text-sm mb-2">標籤</p>
             <h1 className="font-display text-3xl font-bold mb-4">{tag}</h1>
-            <p className="text-muted">
-              共 {posts.length} 篇相關文章
-            </p>
+            <p className="text-muted">第 {currentPage} 頁</p>
           </div>
           <BlogList
             posts={posts}
