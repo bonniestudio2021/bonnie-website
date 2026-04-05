@@ -1,9 +1,9 @@
 import type { BlogPost } from "./blog";
 
 const defaultCta = {
-  headline: "想體驗泰式古法抓龍筋？",
+  headline: "通筋活血，喚醒男人的力量",
   description:
-    "歡迎透過 LINE 預約，Bonnie 會根據你的狀況推薦最適合的療程。",
+    "Bonnie 護理師出身，已為數千位客人服務，客戶滿意度極高。想疏通下半身循環、找回充沛活力？歡迎加 LINE 預約體驗。",
   buttonText: "LINE 線上預約",
   buttonHref: "https://lin.ee/M93vttj",
   variant: "line" as const,

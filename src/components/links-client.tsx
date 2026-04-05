@@ -51,7 +51,7 @@ const mainLinks = [
   { icon: <Home size={18} />, label: "官方網站", href: "/" },
 ];
 
-const skillTags = ["泰式古法", "抓龍筋", "Jap Sen", "男士保健", "護理師背景", "服務數千人次"];
+const skillTags = ["泰式古法", "抓龍筋", "男士保健", "護理師背景", "服務數千人次"];
 
 export default function LinksClient() {
   return (
