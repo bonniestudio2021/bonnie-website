@@ -5,9 +5,9 @@ import BlogList from "@/components/blog-list";
 import { getPaginatedPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "筋絡知識 | Bonnie Bunny",
+  title: "男性保健專欄 | Bonnie Studio",
   description:
-    "抓龍筋知識、痠痛保健、運動恢復——Bunny 分享專業的筋絡保健知識，幫助你更了解自己的身體。",
+    "抓龍筋知識、男性保健、血液循環——Bonnie 分享專業的男性筋絡保健知識，幫助你更了解自己的身體。",
 };
 
 export default function BlogPage() {
@@ -23,10 +23,10 @@ export default function BlogPage() {
               Blog
             </p>
             <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
-              筋絡知識
+              男性保健專欄
             </h1>
             <p className="text-muted max-w-2xl mx-auto">
-              了解抓龍筋、認識你的身體，專業的筋絡保健知識都在這裡
+              了解抓龍筋、認識你的身體，專業的男性保健知識都在這裡
             </p>
           </div>
           <BlogList

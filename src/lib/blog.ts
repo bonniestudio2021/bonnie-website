@@ -21,9 +21,9 @@ export interface BlogPost {
 const defaultCta: BlogCta = {
   headline: "身體的痠痛，交給專業來處理",
   description:
-    "不確定自己適不適合抓龍筋？歡迎透過 LINE 諮詢，Bunny 會根據你的狀況給予建議。",
-  buttonText: "LINE 免費諮詢",
-  buttonHref: "https://line.me/",
+    "不確定自己適不適合抓龍筋？歡迎透過 LINE 諮詢，Bonnie 會根據你的狀況給予建議。",
+  buttonText: "LINE 線上預約",
+  buttonHref: "https://lin.ee/M93vttj",
   variant: "line",
 };
 

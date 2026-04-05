@@ -5,8 +5,8 @@ import { getAllTags } from "@/lib/blog";
 import { Tag } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "所有標籤 | Bonnie Bunny",
-  description: "瀏覽 Bonnie Bunny 部落格所有文章標籤",
+  title: "所有標籤 | Bonnie Studio",
+  description: "瀏覽 Bonnie Studio 部落格所有文章標籤",
 };
 
 export default function TagsPage() {

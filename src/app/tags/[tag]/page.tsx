@@ -16,7 +16,7 @@ export function generateMetadata({
 }): Metadata {
   const tag = decodeURIComponent(params.tag);
   return {
-    title: `${tag} | Bonnie Bunny`,
+    title: `${tag} | Bonnie Studio`,
     description: `瀏覽「${tag}」相關的筋絡保健文章`,
   };
 }

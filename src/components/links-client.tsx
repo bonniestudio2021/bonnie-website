@@ -3,58 +3,55 @@
 import { motion } from "framer-motion";
 import {
   Zap,
-  Waves,
-  Flower2,
+  Droplets,
+  Flame,
+  Ear,
   MapPin,
   BookOpen,
   Home,
+  HelpCircle,
   ExternalLink,
 } from "lucide-react";
 import { LineIcon } from "./icons";
 
-interface SocialLink {
-  icon: React.ReactNode;
-  label: string;
-  href: string;
-  color: string;
-}
+const XIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
-interface MainLink {
-  icon: React.ReactNode;
-  label: string;
-  href: string;
-  highlight?: boolean;
-}
-
-const socialLinks: SocialLink[] = [
+const socialLinks = [
   {
     icon: <LineIcon size={20} />,
     label: "LINE",
-    href: "https://line.me/",
+    href: "https://lin.ee/M93vttj",
     color: "#06C755",
   },
+  {
+    icon: <XIcon size={18} />,
+    label: "X (Twitter)",
+    href: "https://x.com/bonniemassage3",
+    color: "#000000",
+  },
 ];
 
-const mainLinks: MainLink[] = [
-  { icon: <Zap size={18} />, label: "抓龍筋 Jap Sen", href: "/#services" },
-  { icon: <Waves size={18} />, label: "泰式全身舒壓", href: "/#services" },
-  { icon: <Flower2 size={18} />, label: "局部加強調理", href: "/#services" },
+const mainLinks = [
   {
     icon: <LineIcon size={18} />,
-    label: "LINE 立即預約",
-    href: "https://line.me/",
+    label: "LINE 線上預約",
+    href: "https://lin.ee/M93vttj",
     highlight: true,
   },
-  { icon: <BookOpen size={18} />, label: "筋絡知識部落格", href: "/blog" },
+  { icon: <Zap size={18} />, label: "龍筋精油按摩（60 分鐘）", href: "/#services" },
+  { icon: <Droplets size={18} />, label: "龍筋 + 頭部按摩（90 分鐘）", href: "/#services" },
+  { icon: <Ear size={18} />, label: "龍筋 + 耳燭除濕（90 分鐘）", href: "/#services" },
+  { icon: <Flame size={18} />, label: "龍筋 + 頭部 + 耳燭（90 分鐘）", href: "/#services" },
+  { icon: <BookOpen size={18} />, label: "男性保健專欄", href: "/blog" },
+  { icon: <HelpCircle size={18} />, label: "常見問題", href: "/#faq" },
   { icon: <Home size={18} />, label: "官方網站", href: "/" },
-  {
-    icon: <MapPin size={18} />,
-    label: "服務地點",
-    href: "https://maps.google.com/",
-  },
 ];
 
-const skillTags = ["抓龍筋", "Jap Sen", "泰式按摩", "深層筋絡", "撥筋"];
+const skillTags = ["泰式古法", "抓龍筋", "Jap Sen", "男士保健", "護理師背景", "服務數千人次"];
 
 export default function LinksClient() {
   return (
@@ -66,12 +63,17 @@ export default function LinksClient() {
           animate={{ opacity: 1, scale: 1 }}
           className="text-center mb-8"
         >
-          <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-secondary/30 to-primary/20 border-2 border-border flex items-center justify-center mb-4">
-            <span className="text-xs text-muted">Photo</span>
-          </div>
-          <h1 className="font-display text-2xl font-bold">Bonnie Bunny</h1>
+          <img
+            src="/logo.png"
+            alt="Bonnie Studio"
+            className="h-16 mx-auto mb-4"
+          />
+          <h1 className="font-display text-2xl font-bold">Bonnie Studio</h1>
           <p className="text-muted text-sm mt-1">
-            專業抓龍筋 · 泰式深層筋絡按摩
+            泰式古法抓龍筋 · 男士保健
+          </p>
+          <p className="text-muted text-xs mt-1">
+            營業時間 13:00–21:30 · 預約制
           </p>
         </motion.div>
 
@@ -144,9 +146,21 @@ export default function LinksClient() {
           ))}
         </motion.div>
 
+        {/* Locations */}
+        <div className="mt-8 space-y-2 text-sm text-muted">
+          <div className="flex items-start gap-2">
+            <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
+            <p>台北店：近天成大飯店，捷運北車 M3 出口步行約 3 分鐘</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <MapPin size={16} className="text-primary mt-0.5 flex-shrink-0" />
+            <p>台南店：近北門路圓環，東菜市場步行約 5 分鐘</p>
+          </div>
+        </div>
+
         {/* Footer */}
-        <div className="text-center mt-10 text-xs text-muted">
-          <p>&copy; {new Date().getFullYear()} Bonnie Bunny</p>
+        <div className="text-center mt-8 text-xs text-muted">
+          <p>&copy; {new Date().getFullYear()} Bonnie Studio</p>
         </div>
       </div>
     </div>

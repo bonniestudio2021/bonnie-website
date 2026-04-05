@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Clock, Heart, Sparkles } from "lucide-react";
+import { Award, Clock, Heart } from "lucide-react";
+import { textStaggerContainer, staggerBlurChild } from "@/lib/animations";
 
 const credentials = [
   {
@@ -11,8 +12,8 @@ const credentials = [
   },
   {
     icon: Clock,
-    title: "豐富實務經驗",
-    description: "累計服務數千人次，深受客戶信賴",
+    title: "累計服務數千人次",
+    description: "豐富實務經驗，深受客戶信賴與回訪",
   },
   {
     icon: Heart,
@@ -23,57 +24,55 @@ const credentials = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-[#F5F0EB]">
+    <section id="about" className="py-12 sm:py-24 bg-[#F5F0EB]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
+        <div className="grid md:grid-cols-2 -mt-4 md:mt-0 gap-0 md:gap-12 items-center">
+          {/* Video */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative order-2 md:order-1"
           >
-            <div className="aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-secondary/20 to-primary/10 border border-border">
-              {/* Placeholder for about image */}
-              <div className="absolute inset-0 flex items-center justify-center text-muted/40">
-                <div className="text-center">
-                  <Sparkles
-                    size={48}
-                    className="mx-auto mb-3 text-primary/30"
-                  />
-                  <p className="text-sm">About Image</p>
-                  <p className="text-xs mt-1">建議尺寸: 600x800</p>
-                </div>
-              </div>
+            <div
+              className="overflow-hidden border border-border"
+              style={{
+                clipPath: "inset(90px 0 30px 0 round 24px)",
+              }}
+            >
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto block"
+              >
+                <source src="/hero-video.mp4" type="video/mp4" />
+              </video>
             </div>
           </motion.div>
 
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={textStaggerContainer}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            className="order-1 md:order-2"
           >
-            <p className="text-primary font-medium text-sm tracking-widest uppercase mb-3">
-              About
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6">
-              關於 Bunny
-            </h2>
-            <div className="space-y-4 text-muted leading-relaxed mb-8">
-              <p>
-                嗨，我是 Bunny！從接觸泰式按摩開始，就深深被這門傳統技藝所吸引。後來專程前往泰國，在正統按摩學校完成系統化的訓練，取得
-                Jap Sen（抓龍筋）專項認證。
-              </p>
-              <p>
-                我相信每個人的身體都有自己的故事——長期的工作姿勢、運動習慣、生活壓力，都會反映在筋絡的狀態上。我的工作就是用雙手讀懂你的身體，找到那些深層的結節與沾黏，一一為你解開。
-              </p>
-              <p>
-                在 Bonnie Bunny，我堅持正規、專業、安全的服務。每一次療程前都會詳細了解你的身體狀況，調整最適合你的手法與力道，讓你在安心的環境中，找回身體的輕盈與舒暢。
-              </p>
-            </div>
+            <motion.p variants={staggerBlurChild} className="text-primary font-medium text-sm tracking-widest uppercase mb-3">About</motion.p>
+            <motion.h2 variants={staggerBlurChild} className="font-display text-3xl sm:text-4xl font-bold mb-6">關於 Bonnie 抓龍筋</motion.h2>
+            <motion.p variants={staggerBlurChild} className="text-muted leading-relaxed mb-4">
+              嗨，我是 Bonnie！曾經是一名護理師，對人體結構與健康照護有深厚的專業背景。從接觸泰式按摩開始，就深深被這門傳統技藝所吸引，後來專程前往泰國，在正統按摩學校完成系統化的訓練，取得
+              Jap Sen（抓龍筋）專項認證。
+            </motion.p>
+            <motion.p variants={staggerBlurChild} className="text-muted leading-relaxed mb-4">
+              護理師的訓練讓我對身體有更細膩的觀察力——每個人的工作姿勢、運動習慣、生活壓力，都會反映在筋絡的狀態上。我的工作就是用雙手讀懂你的身體，找到那些深層的結節與沾黏，一一為你解開。
+            </motion.p>
+            <motion.p variants={staggerBlurChild} className="text-muted leading-relaxed mb-8">
+              在 Bonnie Studio，我堅持正規、專業、安全的服務。每一次療程前都會詳細了解你的身體狀況，調整最適合你的手法與力道，讓你在安心的環境中，找回身體的輕盈與舒暢。
+            </motion.p>
 
             {/* Credentials */}
             <div className="space-y-4">
@@ -83,8 +82,8 @@ export default function About() {
                     <c.icon size={22} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm">{c.title}</h4>
-                    <p className="text-muted text-sm">{c.description}</p>
+                    <h4 className="font-bold text-base">{c.title}</h4>
+                    <p className="text-muted text-base">{c.description}</p>
                   </div>
                 </div>
               ))}

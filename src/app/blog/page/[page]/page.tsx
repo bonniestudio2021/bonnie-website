@@ -18,7 +18,7 @@ export function generateMetadata({
   params: { page: string };
 }): Metadata {
   return {
-    title: `筋絡知識 - 第 ${params.page} 頁 | Bonnie Bunny`,
+    title: `男性保健專欄 - 第 ${params.page} 頁 | Bonnie Studio`,
   };
 }
 
@@ -40,7 +40,7 @@ export default function BlogPaginatedPage({
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
-              筋絡知識
+              男性保健專欄
             </h1>
             <p className="text-muted">第 {currentPage} 頁</p>
           </div>

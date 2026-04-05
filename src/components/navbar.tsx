@@ -6,12 +6,12 @@ import { Menu, X, Phone } from "lucide-react";
 import { LineIcon } from "./icons";
 
 const navLinks = [
-  { href: "#services", label: "服務項目" },
-  { href: "#about", label: "關於 Bunny" },
-  { href: "#testimonials", label: "客戶好評" },
-  { href: "#pricing", label: "價格方案" },
-  { href: "/blog", label: "筋絡知識" },
-  { href: "#contact", label: "預約諮詢" },
+  { href: "/#services", label: "服務項目" },
+  { href: "/#about", label: "關於 Bonnie 抓龍筋" },
+  { href: "/#testimonials", label: "客戶好評" },
+  { href: "/blog", label: "男性保健專欄" },
+  { href: "/#faq", label: "常見問題" },
+  { href: "/#contact", label: "聯絡我們" },
 ];
 
 export default function Navbar() {
@@ -21,10 +21,12 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold tracking-wide text-primary">
-            Bonnie Bunny
-          </span>
+        <a href="/" className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="Bonnie Studio"
+            className="h-12"
+          />
         </a>
 
         {/* Desktop nav */}
@@ -39,16 +41,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://line.me/"
+            href="https://lin.ee/M93vttj"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-expand text-xs"
-            style={{ "--cta-color": "#06C755" } as React.CSSProperties}
+            className="inline-flex items-center gap-1.5 bg-[#06C755] hover:bg-[#05B34D] text-white text-xs font-bold px-4 py-1.5 rounded-full transition-colors"
           >
-            <span className="cta-label">LINE 預約</span>
-            <span className="cta-icon">
-              <LineIcon size={16} />
-            </span>
+            <LineIcon size={14} />
+            LINE 預約
           </a>
         </div>
 
@@ -84,7 +83,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="https://line.me/"
+                href="https://lin.ee/M93vttj"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#06C755] text-white px-5 py-2.5 rounded-full text-sm font-bold mt-2"

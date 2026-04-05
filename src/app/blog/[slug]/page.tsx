@@ -20,7 +20,7 @@ export function generateMetadata({
   const post = getPostBySlug(params.slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Bonnie Bunny`,
+    title: `${post.title} | Bonnie Studio`,
     description: post.description,
     openGraph: {
       title: post.title,
