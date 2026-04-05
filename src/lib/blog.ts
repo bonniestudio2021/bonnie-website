@@ -27,7 +27,7 @@ const defaultCta: BlogCta = {
   variant: "line",
 };
 
-const posts: BlogPost[] = [
+const _oldPosts = [
   {
     slug: "what-is-jap-sen",
     title: "抓龍筋是什麼？完整認識泰式 Jap Sen 深層筋絡按摩",
@@ -171,7 +171,7 @@ const posts: BlogPost[] = [
 ];
 
 import { newPosts } from "./blog-mens-health";
-const allPosts = [...posts, ...newPosts];
+const allPosts = [...newPosts];
 
 export function getAllPosts(): BlogPost[] {
   return [...allPosts].sort(
