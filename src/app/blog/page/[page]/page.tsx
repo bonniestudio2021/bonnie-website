@@ -12,22 +12,24 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { page: string };
-}): Metadata {
+  params: Promise<{ page: string }>;
+}): Promise<Metadata> {
+  const { page } = await params;
   return {
-    title: `男性保健專欄 - 第 ${params.page} 頁 | Bonnie Studio`,
+    title: `男性保健專欄 - 第 ${page} 頁 | Bonnie Studio`,
   };
 }
 
-export default function BlogPaginatedPage({
+export default async function BlogPaginatedPage({
   params,
 }: {
-  params: { page: string };
+  params: Promise<{ page: string }>;
 }) {
-  const page = parseInt(params.page, 10);
+  const { page: pageStr } = await params;
+  const page = parseInt(pageStr, 10);
   if (isNaN(page) || page < 1) notFound();
 
   const { posts, totalPages, currentPage } = getPaginatedPosts(page);

@@ -9,20 +9,26 @@ export function generateStaticParams() {
   return getAllTags().map(({ tag }) => ({ tag: encodeURIComponent(tag) }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { tag: string };
-}): Metadata {
-  const tag = decodeURIComponent(params.tag);
+  params: Promise<{ tag: string }>;
+}): Promise<Metadata> {
+  const { tag: rawTag } = await params;
+  const tag = decodeURIComponent(rawTag);
   return {
     title: `${tag} | Bonnie Studio`,
-    description: `瀏覽「${tag}」相關的筋絡保健文章`,
+    description: `瀏覽「${tag}」相關的男性保健文章`,
   };
 }
 
-export default function TagPage({ params }: { params: { tag: string } }) {
-  const tag = decodeURIComponent(params.tag);
+export default async function TagPage({
+  params,
+}: {
+  params: Promise<{ tag: string }>;
+}) {
+  const { tag: rawTag } = await params;
+  const tag = decodeURIComponent(rawTag);
   const posts = getPostsByTag(tag);
   if (posts.length === 0) notFound();
 
