@@ -3,7 +3,7 @@ import type { BlogPost } from "./blog";
 const defaultCta = {
   headline: "通筋活血，喚醒男人的力量",
   description:
-    "Bonnie 護理師出身，已為數千位客人服務，客戶滿意度極高。想疏通下半身循環、找回充沛活力？歡迎加 LINE 預約體驗。",
+    "我是 Bonnie，護理師出身，已透過泰式古法抓龍筋為數千位客人服務。想疏通下半身循環、找回充沛活力？歡迎加我的 LINE 預約體驗。",
   buttonText: "LINE 線上預約",
   buttonHref: "https://lin.ee/M93vttj",
   variant: "line" as const,
