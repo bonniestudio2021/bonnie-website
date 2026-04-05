@@ -5,8 +5,10 @@ const footerLinks = [
   { href: "/#about", label: "關於 Bonnie 抓龍筋" },
   { href: "/#testimonials", label: "客戶好評" },
   { href: "/blog", label: "男性保健專欄" },
+  { href: "/tags", label: "文章標籤" },
   { href: "/#faq", label: "常見問題" },
   { href: "/#contact", label: "聯絡我們" },
+  { href: "/links", label: "所有連結" },
 ];
 
 export default function Footer() {
