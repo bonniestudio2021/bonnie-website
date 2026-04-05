@@ -1,0 +1,103 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import TableOfContents from "@/components/table-of-contents";
+import RelatedArticles from "@/components/related-articles";
+import BlogCtaSection from "@/components/blog-cta";
+import { getPostBySlug, getAllSlugs } from "@/lib/blog";
+import { Calendar, Clock, Tag } from "lucide-react";
+
+export function generateStaticParams() {
+  return getAllSlugs().map((slug) => ({ slug }));
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const post = getPostBySlug(params.slug);
+  if (!post) return {};
+  return {
+    title: `${post.title} | Bonnie Bunny`,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      locale: "zh_TW",
+    },
+  };
+}
+
+export default function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = getPostBySlug(params.slug);
+  if (!post) notFound();
+
+  return (
+    <>
+      <Navbar />
+      <main className="pt-24 pb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          {/* Header */}
+          <div className="max-w-3xl mb-10">
+            <div className="flex flex-wrap gap-2 mb-4">
+              {post.tags.map((tag) => (
+                <a
+                  key={tag}
+                  href={`/tags/${encodeURIComponent(tag)}`}
+                  className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                >
+                  <Tag size={10} />
+                  {tag}
+                </a>
+              ))}
+            </div>
+            <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+              {post.title}
+            </h1>
+            <p className="text-muted mb-4">{post.description}</p>
+            <div className="flex items-center gap-4 text-sm text-muted">
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} />
+                {post.date}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} />
+                {post.readTime}
+              </span>
+            </div>
+          </div>
+
+          {/* Content + TOC */}
+          <div className="flex gap-10">
+            <article
+              className="prose prose-stone max-w-3xl flex-1
+                prose-headings:font-display prose-headings:font-bold
+                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                prose-img:rounded-xl"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+
+            {/* Sidebar TOC */}
+            <aside className="hidden lg:block w-64 flex-shrink-0">
+              <TableOfContents headings={post.headings} />
+            </aside>
+          </div>
+
+          {/* Related articles */}
+          <RelatedArticles currentSlug={post.slug} tags={post.tags} />
+
+          {/* CTA */}
+          <BlogCtaSection cta={post.cta} />
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
