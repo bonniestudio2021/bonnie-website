@@ -45,7 +45,7 @@ export default function TableOfContents({ headings }: TOCProps) {
               href={`#${h.id}`}
               className={`block text-sm transition-colors ${
                 activeId === h.id
-                  ? "text-primary font-medium"
+                  ? "text-[#bf6a2f] font-medium"
                   : "text-muted hover:text-foreground"
               }`}
               style={{ paddingLeft: h.level > 2 ? `${(h.level - 2) * 12}px` : undefined }}

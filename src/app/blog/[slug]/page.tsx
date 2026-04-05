@@ -5,8 +5,22 @@ import Footer from "@/components/footer";
 import TableOfContents from "@/components/table-of-contents";
 import RelatedArticles from "@/components/related-articles";
 import BlogCtaSection from "@/components/blog-cta";
+import ArticleSchema from "@/components/article-schema";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { Clock, Tag } from "lucide-react";
+
+function extractFaqs(html: string): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+  const regex = /<h3[^>]*>Q[^:：]*[:：]\s*(.+?)<\/h3>\s*<p>(.+?)<\/p>/g;
+  let match;
+  while ((match = regex.exec(html)) !== null) {
+    faqs.push({
+      question: match[1].replace(/<[^>]+>/g, "").trim(),
+      answer: match[2].replace(/<[^>]+>/g, "").trim(),
+    });
+  }
+  return faqs;
+}
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -41,8 +55,17 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const faqs = extractFaqs(post.content);
+
   return (
     <>
+      <ArticleSchema
+        title={post.title}
+        description={post.description}
+        slug={post.slug}
+        date={post.date}
+        faqs={faqs}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
