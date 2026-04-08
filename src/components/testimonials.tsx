@@ -8,17 +8,17 @@ import { textStaggerContainer, staggerBlurChild } from "@/lib/animations";
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/Bonnie%E6%8A%93%E9%BE%8D%E7%AD%8B%E3%80%81%E9%A1%B1%E5%85%A7%E6%94%BE%E9%AC%86%E6%8C%89%E6%91%A9%E3%80%81%E8%80%B3%E7%87%AD%EF%BC%88%E7%9A%86%E6%8E%A1%E9%A0%90%E7%B4%84%E5%88%B6%EF%BC%89/@25.0461579,121.5183913,17z/data=!4m8!3m7!1s0x6e81e38369644f53:0x44a9bc42443ad9ac!8m2!3d25.0461579!4d121.5183913!9m1!1b1!16s%2Fg%2F11k3k4kcnl";
 
-// All 73 review screenshots (for lightbox navigation)
-const allReviewImages = Array.from({ length: 73 }, (_, i) => ({
+// All 100 review screenshots (for lightbox navigation)
+const allReviewImages = Array.from({ length: 100 }, (_, i) => ({
   src: `/reviews/review-${String(i + 1).padStart(2, "0")}.jpg`,
   alt: `客戶好評截圖 ${i + 1}`,
 }));
 
-// Hand-picked 9 images with similar aspect ratios (~0.85-0.89) for balanced grid
-// Row 1: 05, 30, 38  (ratio ~0.85)
-// Row 2: 33, 01, 40  (ratio ~0.86-0.87)
-// Row 3: 28, 25, 35  (ratio ~0.88-0.89)
-const featuredIndices = [4, 29, 37, 32, 0, 39, 27, 24, 34]; // 0-based
+// Hand-picked 9 images with similar aspect ratios (~0.83-0.87) for balanced grid
+// Row 1: 05, 18, 42  (ratio ~0.85)
+// Row 2: 46, 54, 67  (ratio ~0.83-0.85)
+// Row 3: 69, 74, 96  (ratio ~0.85-0.87)
+const featuredIndices = [4, 17, 41, 45, 53, 66, 68, 73, 95]; // 0-based
 const featuredImages = featuredIndices.map((i) => allReviewImages[i]);
 
 const INITIAL_DESKTOP = 9;
@@ -182,8 +182,8 @@ function Lightbox({
   );
 }
 
-// Pre-computed aspect ratios (height/width) for all 73 images
-const imageRatios = [0.873,1.82,1.075,1.11,0.847,0.495,1.282,0.623,0.637,0.538,0.77,0.66,0.61,0.575,0.75,0.593,1.258,0.552,0.752,0.802,0.538,0.812,0.597,1.075,0.893,1.135,1.442,0.88,0.523,0.847,1.485,1.208,0.86,1.457,0.892,3.703,1.2,0.848,0.69,0.873,0.48,1.433,0.783,1.03,0.848,1.448,1.777,1.382,1.383,0.592,0.877,0.76,0.717,1.077,0.638,0.885,0.853,0.578,0.973,1.295,1.333,0.62,1.113,1.107,1.282,0.582,0.452,0.947,1.353,1.247,1.777,1.318,1.777];
+// Pre-computed aspect ratios (height/width) for all 100 images
+const imageRatios = [1.378,1.078,0.639,0.885,0.853,0.58,0.974,0.621,1.115,1.107,1.282,0.583,0.452,0.948,1.354,1.32,0.51,0.851,0.781,0.777,0.697,0.67,0.5,0.461,0.615,0.633,0.4,0.346,0.48,0.312,0.545,0.755,1.069,0.747,0.819,1.137,0.98,0.736,1.561,0.805,1.301,0.868,1.08,0.803,0.727,0.85,1.174,0.676,0.694,0.881,1.08,0.768,1.223,0.827,0.621,0.956,0.508,0.589,0.717,0.76,0.878,0.592,1.385,1.383,0.785,1.03,0.85,0.692,0.874,0.481,1.457,0.893,1.209,0.86,1.136,1.442,0.881,0.525,0.812,0.597,1.076,0.894,0.553,0.753,0.803,0.539,0.576,0.751,0.593,1.259,0.539,0.771,0.661,0.611,0.638,0.847,0.496,1.282,0.624,1.11];
 
 /* ── Balanced Masonry Grid ── */
 function MasonryGrid({
