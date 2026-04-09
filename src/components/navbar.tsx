@@ -39,8 +39,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Logo 置中 */}
-        <a href="/" className="flex items-center flex-shrink-0 mx-8">
+        {/* Logo 置中（僅桌面版） */}
+        <a href="/" className="hidden md:flex items-center flex-shrink-0 mx-8">
           <img
             src="/logo.png"
             alt="Bonnie Studio"
