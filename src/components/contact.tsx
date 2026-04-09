@@ -94,8 +94,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-sm mb-1">營業時間</h4>
                   <p className="text-muted text-sm">13:00 – 21:30</p>
-                  <p className="text-muted text-xs mt-2">※ 每次僅服務 1 位客人</p>
-                  <p className="text-muted text-xs">※ 預約系統無時段可選 = 已額滿</p>
+                  <p className="text-muted text-xs mt-2">每次僅服務 1 位客人</p>
+                  <p className="text-muted text-xs">預約系統無時段可選 = 已額滿</p>
+                  <p className="text-muted text-xs mt-2">每月 23 號 12:00 公告下個月班表，歡迎加入 LINE 好友查看本月詳細營業日期。</p>
                 </div>
               </div>
             </div>
