@@ -71,10 +71,10 @@ export default async function BlogPostPage({
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div className="max-w-3xl mb-10">
-            <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+            <h1 className="font-display text-3xl sm:text-5xl font-bold mb-5 leading-tight">
               {post.title}
             </h1>
-            <p className="text-muted mb-4">{post.description}</p>
+            <p className="text-muted/70 text-sm leading-relaxed mb-4">{post.description}</p>
             <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
               <span className="flex items-center gap-1.5">
                 <Clock size={14} />
