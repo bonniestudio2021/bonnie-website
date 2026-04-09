@@ -44,12 +44,12 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-3"
             >
               <Sparkles size={14} />
-              泰式古法抓龍筋 · 男士保健
+              台北・台南 抓龍筋推薦 · 男士保健
             </motion.div>
 
             <div className="mb-6">
               <BlurText
-                text="台北台南抓龍筋推薦"
+                text="通筋活血"
                 as="h1"
                 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
                 animate
