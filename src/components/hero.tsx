@@ -96,20 +96,30 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-2 relative"
+            className="order-2 relative flex justify-center"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-border mt-4 md:mt-0">
-              <img
-                src="/hero-bonnie.jpg"
-                alt="Bonnie 泰國按摩學校認證"
-                className="w-full h-auto block"
-              />
+            {/* 背景光暈裝飾 */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#F5DEB3]/40 via-transparent to-[#FCEBD3]/30 blur-2xl -z-10 scale-110" />
+
+            <div className="relative w-[75%] md:w-[70%]">
+              {/* 細邊框外框增加層次 */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#d4a96a]/30 to-[#f0d9b5]/20 blur-sm" />
+
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/60 mt-4 md:mt-0">
+                <img
+                  src="/hero-bonnie.jpg"
+                  alt="Bonnie 泰國按摩學校認證"
+                  className="w-full h-auto block"
+                />
+                {/* 底部漸層 */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg"
+                className="absolute bottom-6 left-4 bg-white/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-xl border border-white/60"
               >
                 <p className="text-xs text-muted">泰國認證</p>
                 <p className="font-display font-bold text-primary text-sm">
