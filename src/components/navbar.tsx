@@ -5,23 +5,42 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { LineIcon } from "./icons";
 
-const navLinks = [
+const navLinksLeft = [
   { href: "/#services", label: "服務項目" },
   { href: "/#about", label: "關於 Bonnie 抓龍筋" },
   { href: "/#testimonials", label: "客戶好評" },
+];
+
+const navLinksRight = [
   { href: "/blog", label: "男性保健專欄" },
   { href: "/#faq", label: "常見問題" },
   { href: "/#contact", label: "聯絡我們" },
 ];
+
+const navLinks = [...navLinksLeft, ...navLinksRight];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="/" className="flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+        {/* Desktop: 左側選單 */}
+        <div className="hidden md:flex items-center gap-6 flex-1">
+          {navLinksLeft.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-muted hover:text-primary transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Logo 置中 */}
+        <a href="/" className="flex items-center flex-shrink-0 mx-6">
           <img
             src="/logo.png"
             alt="Bonnie Studio"
@@ -29,9 +48,9 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
+        {/* Desktop: 右側選單 */}
+        <div className="hidden md:flex items-center gap-6 flex-1 justify-end">
+          {navLinksRight.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -51,7 +70,14 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile: Logo 左 + 漢堡右 */}
+        <a href="/" className="flex items-center md:hidden">
+          <img
+            src="/logo.png"
+            alt="Bonnie Studio"
+            className="h-12"
+          />
+        </a>
         <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setOpen(!open)}
