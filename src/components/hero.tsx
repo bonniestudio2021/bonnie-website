@@ -31,7 +31,7 @@ export default function Hero() {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-center md:pl-12 lg:pl-20">
           {/* Text */}
           <motion.div
             variants={textStaggerContainer}
