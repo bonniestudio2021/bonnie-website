@@ -71,20 +71,22 @@ export default function Navbar() {
         </div>
 
         {/* Mobile: Logo 左 + 漢堡右 */}
-        <a href="/" className="flex items-center md:hidden">
-          <img
-            src="/logo.png"
-            alt="Bonnie Studio"
-            className="h-12"
-          />
-        </a>
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex md:hidden items-center justify-between w-full">
+          <a href="/" className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="Bonnie Studio"
+              className="h-12"
+            />
+          </a>
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

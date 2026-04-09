@@ -44,7 +44,7 @@ const mainLinks = [
   },
   { icon: <Zap size={18} />, label: "龍筋精油按摩（60 分鐘）", href: "/#services" },
   { icon: <Droplets size={18} />, label: "龍筋 + 頭部按摩（90 分鐘）", href: "/#services" },
-  { icon: <Ear size={18} />, label: "龍筋 + 耳燭除濕（90 分鐘）", href: "/#services" },
+  { icon: <Ear size={18} />, label: "龍筋 + 耳燭除濕（75 分鐘）", href: "/#services" },
   { icon: <Flame size={18} />, label: "龍筋 + 頭部 + 耳燭（90 分鐘）", href: "/#services" },
   { icon: <BookOpen size={18} />, label: "男性保健專欄", href: "/blog" },
   { icon: <HelpCircle size={18} />, label: "常見問題", href: "/#faq" },
