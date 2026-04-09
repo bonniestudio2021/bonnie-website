@@ -19,13 +19,13 @@ export default function BlogPage() {
       <main className="pt-24 pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <p className="text-primary font-medium text-sm tracking-widest uppercase mb-3">
+            <p className="text-primary font-medium text-xs tracking-[0.2em] uppercase mb-4">
               Blog
             </p>
-            <h1 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5">
               男性保健專欄
             </h1>
-            <p className="text-muted max-w-2xl mx-auto">
+            <p className="text-muted/70 text-sm max-w-xl mx-auto leading-relaxed">
               了解抓龍筋、認識你的身體，專業的男性保健知識都在這裡
             </p>
           </div>
