@@ -24,15 +24,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="w-full px-10 sm:px-16 h-16 flex items-center">
 
         {/* Desktop: 左側選單 */}
-        <div className="hidden md:flex items-center gap-6 flex-1">
+        <div className="hidden md:flex items-center justify-evenly flex-1">
           {navLinksLeft.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted hover:text-primary transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -40,7 +40,7 @@ export default function Navbar() {
         </div>
 
         {/* Logo 置中 */}
-        <a href="/" className="flex items-center flex-shrink-0 mx-6">
+        <a href="/" className="flex items-center flex-shrink-0 mx-8">
           <img
             src="/logo.png"
             alt="Bonnie Studio"
@@ -49,12 +49,12 @@ export default function Navbar() {
         </a>
 
         {/* Desktop: 右側選單 */}
-        <div className="hidden md:flex items-center gap-6 flex-1 justify-end">
+        <div className="hidden md:flex items-center justify-evenly flex-1">
           {navLinksRight.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted hover:text-primary transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
             href="https://lin.ee/M93vttj"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 bg-[#06C755] hover:bg-[#05B34D] text-white text-xs font-bold px-4 py-1.5 rounded-full transition-colors"
+            className="inline-flex items-center gap-1.5 bg-[#06C755] hover:bg-[#05B34D] text-white text-xs font-bold px-4 py-1.5 rounded-full transition-colors whitespace-nowrap"
           >
             <LineIcon size={14} />
             LINE 預約
