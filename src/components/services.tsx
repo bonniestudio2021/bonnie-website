@@ -33,7 +33,7 @@ const combos = [
     label: "B",
     icon: Ear,
     title: "龍筋 + 耳燭除濕",
-    duration: "90 分鐘",
+    duration: "75 分鐘",
     description:
       "龍筋調理後，再加上耳燭移除耳內濕氣，保持耳內清爽。",
   },
