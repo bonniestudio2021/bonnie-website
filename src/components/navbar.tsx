@@ -89,38 +89,65 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - 右側滑入 */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-background border-b border-border"
-          >
-            <div className="px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block text-base font-medium text-muted hover:text-primary transition-colors"
+          <>
+            {/* 背景遮罩 */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+              onClick={() => setOpen(false)}
+            />
+            {/* 右側面板 */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="md:hidden fixed top-0 right-0 h-full w-72 bg-background shadow-2xl z-50 flex flex-col"
+            >
+              {/* 面板頂部 */}
+              <div className="flex items-center justify-between px-6 h-16 border-b border-border">
+                <img src="/logo.png" alt="Bonnie Studio" className="h-10" />
+                <button
                   onClick={() => setOpen(false)}
+                  className="p-2 text-foreground"
+                  aria-label="Close menu"
                 >
-                  {link.label}
+                  <X size={22} />
+                </button>
+              </div>
+              {/* 選單連結 */}
+              <div className="flex flex-col px-6 py-6 gap-5 flex-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-base font-medium text-foreground/70 hover:text-primary transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+              {/* 底部 LINE 按鈕 */}
+              <div className="px-6 pb-8">
+                <a
+                  href="https://lin.ee/M93vttj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-[#06C755] hover:bg-[#05B34D] text-white px-5 py-3 rounded-full text-sm font-bold w-full transition-colors"
+                >
+                  <LineIcon size={18} />
+                  LINE 線上預約
                 </a>
-              ))}
-              <a
-                href="https://lin.ee/M93vttj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#06C755] text-white px-5 py-2.5 rounded-full text-sm font-bold mt-2"
-              >
-                <LineIcon size={18} />
-                LINE 預約
-              </a>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
