@@ -82,6 +82,9 @@ export const metadata: Metadata = {
     description:
       "護理師出身，正統泰式古法抓龍筋，累計服務數千人次。台北台南兩店，LINE 線上預約。",
   },
+  verification: {
+    google: "kSTxCazLH4sw0dPNcDV35qzeTuexOUCtycnjzdHDpvw",
+  },
   alternates: {
     canonical: BASE_URL,
   },
