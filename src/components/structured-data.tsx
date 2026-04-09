@@ -1,15 +1,33 @@
 const BASE_URL = "https://bonniestudio.tw";
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Bonnie Studio 抓龍筋",
+  url: BASE_URL,
+  description: "台北台南抓龍筋推薦，正統泰式古法 Jap Sen 男士保健按摩",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
-  name: "Bonnie Studio",
+  name: "Bonnie Studio 抓龍筋",
+  alternateName: ["Bonnie Studio", "台北抓龍筋", "台南抓龍筋"],
   description:
-    "正統泰式古法抓龍筋（Jap Sen）男士保健按摩。護理師出身，累計服務數千人次。",
+    "台北台南抓龍筋推薦。正統泰式古法抓龍筋（Jap Sen）男士保健按摩，護理師出身，累計服務數千人次。專業鼠蹊部按摩、骨盆底肌調理，改善男性血液循環。",
   url: BASE_URL,
   telephone: "",
   priceRange: "$$",
   image: `${BASE_URL}/hero-bonnie.jpg`,
+  keywords: "抓龍筋,抓龍筋推薦,台北抓龍筋,台南抓龍筋,鼠蹊部按摩,男性保健按摩,Jap Sen",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.8",
@@ -61,26 +79,26 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "誰適合抓龍筋？",
+      name: "台北哪裡有抓龍筋推薦？",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "適合每一位希望自己私密處血流通暢的男性，尤其久坐、肌肉緊繃、下肢血循差的人更適合。",
+        text: "Bonnie Studio 位於台北中正區，近台北車站，提供正統泰式古法抓龍筋（Jap Sen）男士保健按摩。護理師出身，專業安全，歡迎 LINE 預約諮詢。",
       },
     },
     {
       "@type": "Question",
-      name: "抓龍筋會痛嗎？",
+      name: "台南哪裡有抓龍筋推薦？",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "按摩過程都可以調整力道，過程也不是越痛越好！Bonnie 會隨時確認你的感受，調整到最適合的力道。",
+        text: "Bonnie Studio 在台南亦有服務據點，近北門路圓環，提供正統泰式古法抓龍筋男士保健按摩，歡迎 LINE 預約諮詢。",
       },
     },
     {
       "@type": "Question",
-      name: "抓龍筋會射精嗎？",
+      name: "抓龍筋費用多少錢？",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "不會。這是專門促進男性私密處血流的專業保健純按摩，故不會導致射精，請放心。",
+        text: "抓龍筋費用依療程時間而定，詳細價格歡迎 LINE 諮詢，Bonnie 會根據你的狀況推薦最適合的方案。",
       },
     },
     {
@@ -93,10 +111,50 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "建議多久做一次？",
+      name: "誰適合抓龍筋？",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "建議每個月按一次保持血流暢通。但主要還是建議您生活作息要正常，多喝水，勿太勞累才是最主要的。",
+        text: "適合每一位希望自己私密處血流通暢的男性，尤其久坐、肌肉緊繃、下肢血循差的人更適合。久坐族、上班族、運動員皆適合定期保養。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "抓龍筋安全嗎？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Bonnie 護理師出身，具備專業醫療背景與泰國認證，按摩手法安全專業。按摩前會進行身體狀況諮詢，確保每位客人都能安全舒適地進行療程。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "第一次做抓龍筋需要注意什麼？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "第一次體驗前建議：前一天可先自行清空、按摩前沐浴、著輕便衣物前來、當天不要吃太飽。按摩過程力道可隨時調整，Bonnie 會全程確認你的感受。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "抓龍筋多久做一次比較好？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "建議每個月做一次保持血流暢通。久坐族或循環較差者可考慮每兩週保養一次。規律保養比單次效果更佳。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "抓龍筋會痛嗎？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "按摩過程都可以調整力道，過程也不是越痛越好！Bonnie 會隨時確認你的感受，調整到最適合的力道。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "抓龍筋和一般按摩有什麼不同？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "抓龍筋（Jap Sen）是源自泰國的傳統醫學手法，專注於鼠蹊部、大腿內側的筋絡與血液循環，是針對男性私密處保健的專業療程，與一般全身放鬆按摩不同。",
       },
     },
     {
@@ -124,7 +182,8 @@ const serviceSchema = {
     { "@type": "City", name: "台南市" },
   ],
   description:
-    "使用天然冷壓初榨分餾椰子油，以專業古法手法按揉經絡，放鬆骨盆底肌群，舒緩壓力達到放鬆，促進良好血液循環。",
+    "台北台南抓龍筋推薦。使用天然冷壓初榨分餾椰子油，以泰式古法手法按揉鼠蹊部筋絡，放鬆骨盆底肌群，改善男性血液循環。",
+  keywords: "抓龍筋,台北抓龍筋,台南抓龍筋,鼠蹊部按摩,Jap Sen,男性保健按摩",
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -135,6 +194,10 @@ const serviceSchema = {
 export default function StructuredData() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}

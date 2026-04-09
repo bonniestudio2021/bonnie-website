@@ -49,7 +49,7 @@ export default function Hero() {
 
             <div className="mb-6">
               <BlurText
-                text="通筋活血"
+                text="台北台南抓龍筋推薦"
                 as="h1"
                 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
                 animate
