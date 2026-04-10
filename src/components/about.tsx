@@ -62,7 +62,14 @@ export default function About() {
             className="order-1 md:order-2"
           >
             <motion.p variants={staggerBlurChild} className="text-primary font-medium text-sm tracking-widest uppercase mb-3">About</motion.p>
-            <motion.h2 variants={staggerBlurChild} className="font-display text-3xl sm:text-4xl font-bold mb-6">關於 Bonnie 抓龍筋</motion.h2>
+            <motion.div variants={staggerBlurChild} className="flex items-center gap-4 mb-6">
+              <img
+                src="/bonnie-avatar.jpg"
+                alt="Bonnie"
+                className="w-16 h-16 rounded-full object-cover border-2 border-border flex-shrink-0 shadow-md"
+              />
+              <h2 className="font-display text-3xl sm:text-4xl font-bold">關於 Bonnie 抓龍筋</h2>
+            </motion.div>
             <motion.p variants={staggerBlurChild} className="text-muted leading-relaxed mb-4">
               嗨，我是 Bonnie！曾經是一名護理師，對人體結構與健康照護有深厚的專業背景。從接觸泰式按摩開始，就深深被這門傳統技藝所吸引，後來專程前往泰國，在正統按摩學校完成系統化的訓練，取得
               Jap Sen（抓龍筋）專項認證。
