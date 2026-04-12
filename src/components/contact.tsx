@@ -33,13 +33,13 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-expand"
-                style={{ "--cta-color": "#06C755" } as React.CSSProperties}
+                style={{ "--cta-color": "#06C755", paddingLeft: "0.5rem" } as React.CSSProperties}
               >
                 <span className="cta-label flex items-center gap-2">
                   <img
                     src="/bonnie-avatar.jpg"
                     alt="Bonnie"
-                    className="w-7 h-7 rounded-full object-cover border border-white/50 flex-shrink-0"
+                    className="w-10 h-10 rounded-full object-cover border border-white/50 flex-shrink-0"
                   />
                   LINE 線上預約
                 </span>
