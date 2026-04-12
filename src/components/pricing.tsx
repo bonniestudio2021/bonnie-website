@@ -17,7 +17,6 @@ const includes = [
 const perks = [
   "加入好友即可查看完整方案",
   "個人化療程推薦",
-  "Bonnie 親自回覆諮詢",
 ];
 
 export default function Pricing() {
@@ -64,26 +63,23 @@ export default function Pricing() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <img
-              src="/bonnie-avatar.jpg"
-              alt="Bonnie"
-              className="w-12 h-12 rounded-full object-cover border-2 border-border shadow-md flex-shrink-0"
-            />
-            <div className="flex flex-col items-center sm:items-start gap-1">
-              <a
-                href="https://lin.ee/M93vttj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-expand text-base"
-                style={{ "--cta-color": "#06C755" } as React.CSSProperties}
-              >
-                <span className="cta-label">加入 LINE 查看完整價目表</span>
-                <span className="cta-icon"><LineIcon size={17} /></span>
-              </a>
-              <p className="text-xs text-muted/40">加入後即可查詢詳細方案與費用</p>
-            </div>
-          </div>
+          <a
+            href="https://lin.ee/M93vttj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-expand text-base"
+            style={{ "--cta-color": "#06C755" } as React.CSSProperties}
+          >
+            <span className="cta-label flex items-center gap-2">
+              <img
+                src="/bonnie-avatar.jpg"
+                alt="Bonnie"
+                className="w-7 h-7 rounded-full object-cover border border-white/50 flex-shrink-0"
+              />
+              加入 LINE 查看完整價目表
+            </span>
+            <span className="cta-icon"><LineIcon size={17} /></span>
+          </a>
         </motion.div>
       </div>
     </section>

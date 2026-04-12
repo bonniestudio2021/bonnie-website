@@ -72,25 +72,25 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={staggerBlurChild} className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-3">
-                <img
-                  src="/bonnie-avatar.jpg"
-                  alt="Bonnie"
-                  className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0"
-                />
-                <a
-                  href="https://lin.ee/M93vttj"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-expand"
-                  style={{ "--cta-color": "#06C755" } as React.CSSProperties}
-                >
-                  <span className="cta-label">LINE 線上預約</span>
-                  <span className="cta-icon">
-                    <LineIcon size={16} />
-                  </span>
-                </a>
-              </div>
+              <a
+                href="https://lin.ee/M93vttj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-expand"
+                style={{ "--cta-color": "#06C755" } as React.CSSProperties}
+              >
+                <span className="cta-label flex items-center gap-2">
+                  <img
+                    src="/bonnie-avatar.jpg"
+                    alt="Bonnie"
+                    className="w-7 h-7 rounded-full object-cover border border-white/50 flex-shrink-0"
+                  />
+                  LINE 線上預約
+                </span>
+                <span className="cta-icon">
+                  <LineIcon size={16} />
+                </span>
+              </a>
               <a
                 href="#services"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/30 text-primary hover:bg-primary/5 font-medium transition-colors"

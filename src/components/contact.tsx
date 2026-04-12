@@ -32,10 +32,18 @@ export default function Contact() {
                 href="https://lin.ee/M93vttj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#06C755] hover:bg-[#05B34D] text-white font-bold px-6 py-3 rounded-full transition-colors"
+                className="cta-expand"
+                style={{ "--cta-color": "#06C755" } as React.CSSProperties}
               >
-                <LineIcon size={18} />
-                LINE 線上預約
+                <span className="cta-label flex items-center gap-2">
+                  <img
+                    src="/bonnie-avatar.jpg"
+                    alt="Bonnie"
+                    className="w-7 h-7 rounded-full object-cover border border-white/50 flex-shrink-0"
+                  />
+                  LINE 線上預約
+                </span>
+                <span className="cta-icon"><LineIcon size={17} /></span>
               </a>
             </motion.div>
 
