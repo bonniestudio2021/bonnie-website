@@ -15,9 +15,9 @@ const includes = [
 ];
 
 const perks = [
-  "LINE 好友限定優惠",
-  "新客首次專屬方案",
-  "不定期優惠先知道",
+  "加入好友即可查看完整方案",
+  "個人化療程推薦",
+  "Bonnie 親自回覆諮詢",
 ];
 
 export default function Pricing() {
@@ -34,12 +34,12 @@ export default function Pricing() {
           {/* Badge */}
           <div className="inline-flex items-center gap-1.5 bg-accent/15 text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-5 tracking-wide">
             <Sparkles size={12} />
-            LINE 好友限定優惠價
+            加入好友查看完整價目表
           </div>
 
-          <h2 className="font-display text-2xl sm:text-3xl font-bold mb-3">加入好友，解鎖完整價目表</h2>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold mb-3">預約泰式古法抓龍筋</h2>
           <p className="text-muted mb-5">
-            加入 LINE 即可查看詳細方案價格，並享有好友限定優惠——Bonnie 也會根據你的狀況推薦最適合的療程
+            加入 LINE 好友即可查看詳細方案與費用，Bonnie 會根據你的狀況親自推薦最適合的療程
           </p>
 
           {/* Perks */}
@@ -64,17 +64,26 @@ export default function Pricing() {
             ))}
           </div>
 
-          <a
-            href="https://lin.ee/M93vttj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-expand text-base"
-            style={{ "--cta-color": "#06C755" } as React.CSSProperties}
-          >
-            <span className="cta-label">加入 LINE 查看優惠價目表</span>
-            <span className="cta-icon"><LineIcon size={17} /></span>
-          </a>
-          <p className="text-xs text-muted/40 mt-4">加入後即可查詢詳細方案與費用</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <img
+              src="/bonnie-avatar.jpg"
+              alt="Bonnie"
+              className="w-12 h-12 rounded-full object-cover border-2 border-border shadow-md flex-shrink-0"
+            />
+            <div className="flex flex-col items-center sm:items-start gap-1">
+              <a
+                href="https://lin.ee/M93vttj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-expand text-base"
+                style={{ "--cta-color": "#06C755" } as React.CSSProperties}
+              >
+                <span className="cta-label">加入 LINE 查看完整價目表</span>
+                <span className="cta-icon"><LineIcon size={17} /></span>
+              </a>
+              <p className="text-xs text-muted/40">加入後即可查詢詳細方案與費用</p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

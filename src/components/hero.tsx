@@ -71,19 +71,26 @@ export default function Hero() {
               我是 Bonnie，護理師出身，已累計服務超過數千位客人。以正統泰式古法抓龍筋手法，深入鼠蹊部與下肢筋絡，疏通血液循環、釋放深層緊繃，幫助你找回充沛精力與自信狀態。
             </motion.p>
 
-            <motion.div variants={staggerBlurChild} className="flex flex-wrap gap-4">
-              <a
-                href="https://lin.ee/M93vttj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-expand"
-                style={{ "--cta-color": "#06C755" } as React.CSSProperties}
-              >
-                <span className="cta-label">LINE 線上預約</span>
-                <span className="cta-icon">
-                  <LineIcon size={16} />
-                </span>
-              </a>
+            <motion.div variants={staggerBlurChild} className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/bonnie-avatar.jpg"
+                  alt="Bonnie"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0"
+                />
+                <a
+                  href="https://lin.ee/M93vttj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-expand"
+                  style={{ "--cta-color": "#06C755" } as React.CSSProperties}
+                >
+                  <span className="cta-label">LINE 線上預約</span>
+                  <span className="cta-icon">
+                    <LineIcon size={16} />
+                  </span>
+                </a>
+              </div>
               <a
                 href="#services"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary/30 text-primary hover:bg-primary/5 font-medium transition-colors"
