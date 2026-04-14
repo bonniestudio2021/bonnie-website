@@ -618,7 +618,7 @@ export const batchA: BlogPost[] = [
   },
   {
     slug: "taipei-zhua-long-jin",
-    title: "台北抓龍筋推薦｜護理師認證，北車站附近，專業男士保健",
+    title: "台北抓龍筋推薦｜護理師出身 × 泰國正統認證，北車站附近",
     description:
       "台北抓龍筋推薦首選 Bonnie Studio——護理師出身、累計服務數千人次，正統泰式古法 Jap Sen，北車 M3 出口步行 3 分鐘。教你 6 個辨別台北抓龍筋專業店家的標準，避開地雷。",
     date: "2026-03-29",
