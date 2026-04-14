@@ -7,6 +7,7 @@ import { Tag } from "lucide-react";
 export const metadata: Metadata = {
   title: "所有標籤 | Bonnie Studio",
   description: "瀏覽 Bonnie Studio 部落格所有文章標籤",
+  robots: { index: false, follow: true },
 };
 
 export default function TagsPage() {

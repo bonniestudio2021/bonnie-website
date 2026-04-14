@@ -19,6 +19,7 @@ export async function generateMetadata({
   return {
     title: `${tag} | Bonnie Studio`,
     description: `瀏覽「${tag}」相關的男性保健文章`,
+    robots: { index: false, follow: true },
   };
 }
 
