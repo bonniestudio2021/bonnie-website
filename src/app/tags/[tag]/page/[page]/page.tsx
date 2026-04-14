@@ -26,6 +26,7 @@ export async function generateMetadata({
   const tag = decodeURIComponent(rawTag);
   return {
     title: `${tag} - 第 ${page} 頁 | Bonnie Studio`,
+    robots: { index: false, follow: true },
   };
 }
 

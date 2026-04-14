@@ -4,6 +4,7 @@ import LinksClient from "@/components/links-client";
 export const metadata: Metadata = {
   title: "Links | Bonnie Studio",
   description: "Bonnie Studio 的所有連結 — 預約、服務、部落格、聯絡方式",
+  robots: { index: false, follow: true },
 };
 
 export default function LinksPage() {
