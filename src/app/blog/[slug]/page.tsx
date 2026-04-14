@@ -37,11 +37,16 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Bonnie Studio`,
     description: post.description,
+    keywords: [...post.tags, "抓龍筋", "Bonnie Studio", "男士保健", "泰式按摩"],
+    alternates: {
+      canonical: `https://bonniestudio.tw/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       locale: "zh_TW",
+      url: `https://bonniestudio.tw/blog/${slug}`,
     },
   };
 }

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Bonnie Studio 抓龍筋",
   },
   description:
-    "【台北・台南抓龍筋推薦】Bonnie Studio 護理師出身，正統泰式古法 Jap Sen 抓龍筋，累計服務數千人次。專業鼠蹊部按摩、骨盆底肌調理，改善男性血液循環。台北近北車站、台南近北門路。LINE 線上預約，歡迎諮詢。",
+    "台北・台南抓龍筋推薦首選｜Bonnie Studio，護理師出身，正統泰式古法 Jap Sen，累計服務數千人次。專業鼠蹊部按摩、骨盆底肌調理，改善男性血液循環。台北近北車站、台南近北門路，LINE 線上預約。",
   keywords: [
     "抓龍筋",
     "抓龍筋推薦",
