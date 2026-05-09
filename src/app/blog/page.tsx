@@ -5,9 +5,12 @@ import BlogList from "@/components/blog-list";
 import { getPaginatedPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "男性保健專欄 | Bonnie Studio",
+  title: "男性保健專欄｜抓龍筋知識、循環健康、保健食品 | Bonnie Studio",
   description:
-    "抓龍筋知識、男性保健、血液循環——Bonnie 分享專業的男性筋絡保健知識，幫助你更了解自己的身體。",
+    "護理師 Bonnie 的男性保健專欄——抓龍筋知識、鼠蹊部循環、攝護腺保健、保健食品指南，專業實用的男性健康文章，幫助你更了解自己的身體。",
+  alternates: {
+    canonical: "https://bonniestudio.tw/blog",
+  },
 };
 
 export default function BlogPage() {
