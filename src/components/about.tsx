@@ -35,17 +35,12 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="relative order-2 md:order-1"
           >
-            <div
-              className="overflow-hidden border border-border"
-              style={{
-                clipPath: "inset(90px 0 30px 0 round 24px)",
-              }}
-            >
+            <div className="overflow-hidden rounded-3xl border border-border shadow-xl">
               <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
                 <iframe
-                  src="https://www.youtube.com/embed/Y0AxoIUzdFU?autoplay=1&mute=1&loop=1&playlist=Y0AxoIUzdFU&controls=0&rel=0&playsinline=1&modestbranding=1"
+                  src="https://www.youtube.com/embed/Y0AxoIUzdFU?rel=0&playsinline=1&modestbranding=1"
                   className="absolute inset-0 w-full h-full"
-                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
