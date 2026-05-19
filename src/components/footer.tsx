@@ -70,8 +70,8 @@ export default function Footer() {
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white hover:text-black flex flex-col items-center justify-center transition-colors leading-none"
               aria-label="FansOne"
             >
-              <span className="text-[9px] font-bold tracking-tight">fans</span>
-              <span className="text-[9px] font-bold tracking-tight">one</span>
+              <span className="text-[10px] font-bold tracking-tight leading-tight">Fans</span>
+              <span className="text-[10px] font-bold tracking-tight leading-tight">One</span>
             </a>
           </div>
         </div>
