@@ -41,15 +41,14 @@ export default function About() {
                 clipPath: "inset(90px 0 30px 0 round 24px)",
               }}
             >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto block"
-              >
-                <source src="/hero-video.mp4" type="video/mp4" />
-              </video>
+              <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/Y0AxoIUzdFU?autoplay=1&mute=1&loop=1&playlist=Y0AxoIUzdFU&controls=0&rel=0&playsinline=1&modestbranding=1"
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </motion.div>
 
