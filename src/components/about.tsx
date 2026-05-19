@@ -26,7 +26,7 @@ export default function About() {
   return (
     <section id="about" className="py-12 sm:py-24 bg-[#F5F0EB]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid md:grid-cols-2 -mt-4 md:mt-0 gap-0 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 -mt-4 md:mt-0 gap-8 md:gap-12 items-center">
           {/* Video */}
           <motion.div
             initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
