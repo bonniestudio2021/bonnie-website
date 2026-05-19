@@ -1,16 +1,5 @@
 import { LineIcon } from "./icons";
 
-const footerLinks = [
-  { href: "/#services", label: "服務項目" },
-  { href: "/#about", label: "關於 Bonnie 抓龍筋" },
-  { href: "/#testimonials", label: "客戶好評" },
-  { href: "/blog", label: "男性保健專欄" },
-  { href: "/tags", label: "文章標籤" },
-  { href: "/#faq", label: "常見問題" },
-  { href: "/#contact", label: "聯絡我們" },
-  { href: "/links", label: "所有連結" },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-[#5E4F3D] text-white/60 py-12">
@@ -26,19 +15,6 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm">泰式古法抓龍筋 · 男士保健</p>
-          </div>
-
-          {/* Links */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            {footerLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm hover:text-white transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
           </div>
 
           {/* Social */}
@@ -67,14 +43,11 @@ export default function Footer() {
               href="https://fansone.co/Jiadogdog"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-colors overflow-hidden"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white hover:text-black flex flex-col items-center justify-center transition-colors leading-none"
               aria-label="FansOne"
             >
-              <img
-                src="/fansone-icon.svg"
-                alt="FansOne"
-                className="w-6 h-6 object-contain"
-              />
+              <span className="text-[9px] font-bold tracking-tight">fans</span>
+              <span className="text-[9px] font-bold tracking-tight">one</span>
             </a>
           </div>
         </div>
