@@ -71,7 +71,7 @@ export default function Footer() {
               aria-label="FansOne"
             >
               <img
-                src="https://fansone.co/favicon.ico"
+                src="/fansone-icon.svg"
                 alt="FansOne"
                 className="w-6 h-6 object-contain"
               />
