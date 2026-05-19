@@ -33,9 +33,9 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative order-2 md:order-1"
+            className="relative order-2 md:order-1 flex justify-center"
           >
-            <div className="overflow-hidden rounded-3xl border border-border shadow-xl">
+            <div className="w-full max-w-[260px] overflow-hidden rounded-3xl border border-border shadow-xl">
               <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
                 <iframe
                   src="https://www.youtube.com/embed/Y0AxoIUzdFU?rel=0&playsinline=1&modestbranding=1"
