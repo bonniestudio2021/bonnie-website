@@ -1,5 +1,15 @@
 import { LineIcon } from "./icons";
 
+const footerLinks = [
+  { href: "/#services", label: "服務項目" },
+  { href: "/#about", label: "關於 Bonnie 抓龍筋" },
+  { href: "/#testimonials", label: "客戶好評" },
+  { href: "/blog", label: "男性保健專欄" },
+  { href: "/tags", label: "文章標籤" },
+  { href: "/#faq", label: "常見問題" },
+  { href: "/#contact", label: "聯絡我們" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[#5E4F3D] text-white/60 py-12">
@@ -15,6 +25,19 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm">泰式古法抓龍筋 · 男士保健</p>
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {footerLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Social */}
