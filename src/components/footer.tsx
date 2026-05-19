@@ -67,10 +67,14 @@ export default function Footer() {
               href="https://fansone.co/Jiadogdog"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#FF6B9D] flex items-center justify-center transition-colors text-white/60 hover:text-white text-xs font-bold"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-colors overflow-hidden"
               aria-label="FansOne"
             >
-              F1
+              <img
+                src="https://fansone.co/favicon.ico"
+                alt="FansOne"
+                className="w-6 h-6 object-contain"
+              />
             </a>
           </div>
         </div>
