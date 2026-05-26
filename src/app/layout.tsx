@@ -29,6 +29,14 @@ const notoSansTC = Noto_Sans_TC({
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   title: {
     default: "抓龍筋推薦｜Bonnie Studio 台北台南泰式古法抓龍筋男士保健按摩",
     template: "%s | Bonnie Studio 抓龍筋",
