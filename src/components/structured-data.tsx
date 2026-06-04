@@ -62,7 +62,12 @@ const localBusiness = {
     opens: "13:00",
     closes: "21:30",
   },
-  sameAs: ["https://lin.ee/M93vttj", "https://x.com/bonniemassage3"],
+  sameAs: [
+    "https://lin.ee/M93vttj",
+    "https://x.com/DOGirlstyle",
+    "https://www.instagram.com/bonniemassage11",
+    "https://fansone.co/Jiadogdog",
+  ],
 };
 
 const faqSchema = {
