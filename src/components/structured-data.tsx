@@ -20,9 +20,10 @@ const localBusiness = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
   name: "Bonnie Studio 抓龍筋",
-  alternateName: ["Bonnie Studio", "台北抓龍筋", "台南抓龍筋"],
+  alternateName: ["Bonnie Studio", "台北抓龍筋", "台南抓龍筋", "bonnie抓龍筋"],
+  foundingDate: "2021",
   description:
-    "台北台南抓龍筋推薦。正統泰式古法抓龍筋（Jap Sen）男士保健按摩，護理師出身，累計服務數千人次。專業鼠蹊部按摩、骨盆底肌調理，改善男性血液循環。",
+    "Bonnie Studio 抓龍筋成立於2021年，台北台南抓龍筋推薦。正統泰式古法抓龍筋（Jap Sen）男士保健按摩，護理師出身，累計服務數千人次。專業鼠蹊部按摩、骨盆底肌調理，改善男性血液循環。",
   url: BASE_URL,
   telephone: "",
   priceRange: "$$",
